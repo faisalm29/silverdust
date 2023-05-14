@@ -9,17 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.21.0",
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.16.3",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
     "autoprefixer": "10.4.14",
+    "classnames": "^2.3.2",
+    "contentlayer": "^0.3.2",
+    "date-fns": "^2.30.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.2",
     "next": "13.3.2",
+    "next-contentlayer": "^0.3.2",
+    "next-seo": "^6.0.0",
+    "nprogress": "^0.2.0",
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-pretty-code": "^0.9.5",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^3.0.1",
+    "shiki": "^0.14.2",
+    "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.2.8"
   }
 }
