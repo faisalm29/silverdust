@@ -12,6 +12,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    appDir: false,
+  },
 };
 
 module.exports = withContentlayer(nextConfig);
