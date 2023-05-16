@@ -5,7 +5,8 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/legacy/image";
 import MDXContainer from "@/components/MDXContainer";
 import TOC from "@/components/TOC";
-import {NextSeo} from "next-seo";
+import { NextSeo } from "next-seo";
+import siteConfig from "@/config/site";
 
 type PostPageProps = {
   post: Post;
@@ -18,7 +19,27 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <>
-      {/* Article section */}       
+      <NextSeo
+        title={`${post.title} | ${siteConfig.details.title}`}
+        description={post.description}
+        openGraph={{
+          url: siteConfig.details.url,
+          title: post.title,
+          description: post.description,
+          images: [
+            {
+              url: `${siteConfig.details.url}/images/blog/${post.slug}/thumbnail.jpg`,
+              width: 1200,
+              height: 675,
+              alt: post.title,
+            },
+          ],
+          siteName: siteConfig.details.title,
+          type: "article",
+          locale: "id_ID",
+        }}
+      />
+      {/* Article section */}
       <article className="mb-20">
         {/* Title */}
         <div className="mb-20">
@@ -26,7 +47,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <ul className="flex items-center gap-8">
             <li>
               <time>{format(parseISO(post.publishedAt), "LLL d, yyyy")}</time>
-            </li> 
+            </li>
             <li>{post.readingTime.text}</li>
             <li>100 views</li>
           </ul>

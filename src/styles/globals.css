@@ -8,3 +8,7 @@
     font-size: 1rem;
   }
 }
+
+.rehype-code-title {
+  @apply -mb-[27px] ml-4 flex w-fit items-center rounded-[6px] rounded-b-none border border-[#F2F2F2]  p-1.5 text-sm;
+}

@@ -24,7 +24,7 @@ const PageHeader = ({
       )}
       <p className="text-[38px]">{subTitle}</p>
       {isHero && (
-        <div>
+        <div className="mt-8">
           <Link href="/about" className="underline">
             More about Silverdust -&gt;
           </Link>

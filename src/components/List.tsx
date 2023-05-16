@@ -35,10 +35,10 @@ const List = ({
             <div className="mb-4 flex items-center justify-between">
               <h3 className="text-[38px] font-bold">{project.title}</h3>
               <div className="flex items-center gap-4">
-                <a href={`/projects/${project.repoUrl}`} target="_blank">
+                <a href={project.repoUrl} target="_blank">
                   <Github width={24} height={24} />
                 </a>
-                <a href={`/projects/${project.demoUrl}`} target="_blank">
+                <a href={project.demoUrl} target="_blank">
                   <ArrowOutward width={30} height={30} />
                 </a>
               </div>

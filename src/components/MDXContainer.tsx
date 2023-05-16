@@ -17,10 +17,25 @@ const MDXContainer = {
     return <Link href={props.href} {...props} />;
   },
   h2: ({ ...props }) => {
-    return <h2 {...props} data-heading className="group flex items-center justify-between" />;
+    return (
+      <h2
+        {...props}
+        data-heading
+        className="group flex items-center justify-between"
+      />
+    );
   },
   h3: ({ ...props }) => {
-    return <h3 {...props} data-heading className="group flex items-center justify-between" />;
+    return (
+      <h3
+        {...props}
+        data-heading
+        className="group flex items-center justify-between"
+      />
+    );
+  },
+  pre: ({ ...props }) => {
+    return <pre {...props} className="border border-[#F2F2F2] bg-primary" />;
   },
 };
 

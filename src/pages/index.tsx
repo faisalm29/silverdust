@@ -55,7 +55,9 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="col-start-9 col-end-13">
             <div>
               <h2 className="mb-4 text-[38px] font-bold">Featured Archives</h2>
-              <p className="mb-8 text-[28px]">My past that wasn`&apos;t here.</p>
+              <p className="mb-8 text-[28px]">
+                My past that wasn`&apos;t here.
+              </p>
             </div>
             <List isArticles={true} articles={articles} />
           </div>
@@ -66,7 +68,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 export const getStaticProps = async () => {
-  const posts: Post[] = allPosts.sort((a, b) => {
+  const posts: Post[] = allPosts.slice(0, 3).sort((a, b) => {
     return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
   });
 

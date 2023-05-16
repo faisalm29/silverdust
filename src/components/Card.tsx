@@ -32,10 +32,18 @@ const Card = ({
           ))}
         </ul>
         <div className="flex items-center gap-8">
-          <a href={project.demoUrl} className="flex items-center gap-1">
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            className="flex items-center gap-1"
+          >
             Live Demo <ArrowOutward width={24} height={24} />
           </a>
-          <a href={project.repoUrl} className="flex items-center gap-1">
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            className="flex items-center gap-1"
+          >
             Source Code <Github width={24} height={24} />
           </a>
         </div>
@@ -81,7 +89,7 @@ const Card = ({
   if (snippet) {
     return (
       <div className="border border-secondary p-8">
-        <Link href={`/snippet/${snippet.slug}`}>
+        <Link href={`/snippets/${snippet.slug}`}>
           <h2 className="mb-4 text-[38px] font-bold">{snippet.title}</h2>
           <p className="mb-4">{snippet.description}</p>
           <ul className="flex items-center gap-4">
