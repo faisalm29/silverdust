@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import { Pluggable } from "unified";
 
 const prettyCodeOptions = {
-  theme: "ultimate-light",
+  theme: "material-theme-ocean",
 
   onVisitLine(node: any) {
     if (node.children.length === 0) {
