@@ -63,7 +63,7 @@ module.exports = {
                     borderLeft: `2px solid transparent`,
                   },
                   "> .line.line--highlighted": {
-                    background: "rgba(200,200,255,0.1)",
+                    background: "rgba(200,200,255,0.3)",
                     borderLeftColor: colors.blue[400],
                   },
                 },
