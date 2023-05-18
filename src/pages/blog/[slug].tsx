@@ -28,7 +28,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           description: post.description,
           images: [
             {
-              url: `${siteConfig.details.url}/images/blog/${post.slug}/thumbnail.jpg`,
+              url: `${siteConfig.details.url}/images/blog/${post.slug}/thumbnail.png`,
               width: 1200,
               height: 675,
               alt: post.title,

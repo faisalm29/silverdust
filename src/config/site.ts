@@ -5,7 +5,7 @@ const siteConfig = {
       "This might be just dust, but it's silver. Who can resist something shiny?",
     author: "Faisal Muhammad",
     description: "Blog and personal portfolio.",
-    url: "https://www.silverdust.vercel.app",
+    url: "https://www.silverdust.site",
   },
   assets: {
     image: "/og.png",

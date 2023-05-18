@@ -39,8 +39,5 @@
     "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
-  },
-  "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.2.8"
   }
 }

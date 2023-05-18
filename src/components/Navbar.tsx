@@ -11,7 +11,7 @@ const links = [
 const Navbar = (): JSX.Element => {
   return (
     <nav className="mb-20 mt-4">
-      <div className="mx-auto max-w-[1238px] py-4">
+      <div className="mx-auto max-w-[1238px] py-4 px-4 md:px-8">
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
