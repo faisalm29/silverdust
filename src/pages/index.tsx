@@ -41,9 +41,9 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           ))}
         </div>
 
-        <div className="mb-20 grid grid-cols-12 grid-rows-[auto] gap-6">
+        <div className="mb-20 grid grid-cols-1 grid-rows-[auto] gap-20 lg:gap-6 lg:grid-cols-12">
           {/* Featured Project Section */}
-          <div className="col-span-7">
+          <div className="col-span-1 lg:col-span-7">
             <div>
               <h2 className="mb-4 text-[51px] font-bold">Featured Projects</h2>
               <p className="mb-8 text-[38px]">What I did passionately.</p>
@@ -52,7 +52,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
 
           {/* Featured Archives Section */}
-          <div className="col-start-9 col-end-13">
+          <div className="col-span-1 lg:col-start-9 lg:col-end-13">
             <div>
               <h2 className="mb-4 text-[38px] font-bold">Featured Archives</h2>
               <p className="mb-8 text-[28px]">
