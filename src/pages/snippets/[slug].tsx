@@ -15,7 +15,7 @@ const SnippetPage: NextPage<InferGetStaticPropsType<typeof getStaticPaths>> = ({
   const Component = useMDXComponent(snippet.body.code);
 
   return (
-    <>
+    <div className="px-4 md:px-8">
       <NextSeo
         title={`${snippet.title} | ${siteConfig.details.title}`}
         description={snippet.description}
@@ -26,7 +26,7 @@ const SnippetPage: NextPage<InferGetStaticPropsType<typeof getStaticPaths>> = ({
         <p className="mb-20">{snippet.description}</p>
         <Component components={MDXContainer} />
       </div>
-    </>
+    </div>
   );
 };
 

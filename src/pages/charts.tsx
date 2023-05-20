@@ -17,7 +17,7 @@ const Charts = (): JSX.Element => {
   const { data } = useSWR("/api/spotify-top-tracks", fetcher);
 
   return (
-    <>
+    <div className="px-4 md:px-8">
       <NextSeo
         title={`${pageTitle} | ${siteConfig.details.title}`}
         description={pageDesc}
@@ -26,7 +26,7 @@ const Charts = (): JSX.Element => {
       <div>
         <List isArticles={false} data={data} />
       </div>
-    </>
+    </div>
   );
 };
 

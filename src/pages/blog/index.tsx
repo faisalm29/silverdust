@@ -13,7 +13,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const pageDesc = "A safe place for words.";
 
   return (
-    <>
+    <div className="px-4 md:px-8">
       <NextSeo
         title={`${pageTitle} | ${siteConfig.details.title}`}
         description={pageDesc}
@@ -24,7 +24,7 @@ const Blog: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Card notPost={false} post={post} key={post._id} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

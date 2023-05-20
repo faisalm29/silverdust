@@ -18,6 +18,15 @@ module.exports = {
         return {
           DEFAULT: {
             css: {
+              h2: {
+                margin: "0",
+                paddingTop: "56px",
+                paddingBottom: "24px",
+              },
+              h3: {},
+              h4: {},
+              p: {},
+
               code: {
                 color: "#86e1fc",
                 "&::before": {

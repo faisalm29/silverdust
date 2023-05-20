@@ -6,6 +6,7 @@
   html {
     font-family: "Inter", sans-serif;
     font-size: 1rem;
+    @apply text-secondary;
   }
 }
 

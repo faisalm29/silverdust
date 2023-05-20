@@ -4,3 +4,6 @@ export { default as Magnifier } from "./Magnifier";
 export { default as Spotify } from "./Spotify";
 export { default as Twitter } from "./Twitter";
 export { default as Hashtag } from "./Hashtag";
+export { default as HamburgerMenu } from "./HamburgerMenu";
+export { default as Close } from "./Close";
+export { default as HeadingList } from "./HeadingList";

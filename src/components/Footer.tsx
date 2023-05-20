@@ -28,7 +28,7 @@ const Footer = (): JSX.Element => {
   return (
     <footer className="bg-secondary pb-12 pt-20 text-primary">
       <div className="mx-auto max-w-[1238px]">
-        <div className="mb-[80px] grid grid-cols-1 grid-rows-[auto] gap-10 px-4 md:px-8 lg:grid-cols-12 lg:gap-6">
+        <div className="mb-20 grid grid-cols-1 grid-rows-[auto] gap-10 px-4 md:px-8 lg:grid-cols-12 lg:gap-6">
           <div className="row-start-3 row-end-3 lg:col-span-3 lg:row-start-1 lg:row-end-1">
             <div className="grid grid-cols-12 gap-8 lg:block">
               <div className="col-span-6">

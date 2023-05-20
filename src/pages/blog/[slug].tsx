@@ -2,11 +2,14 @@ import { InferGetStaticPropsType, NextPage } from "next/types";
 import { allPosts, Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/legacy/image";
 import MDXContainer from "@/components/MDXContainer";
 import TOC from "@/components/TOC";
 import { NextSeo } from "next-seo";
 import siteConfig from "@/config/site";
+import { HeadingList } from "@/components/Icon";
 
 type PostPageProps = {
   post: Post;
@@ -15,6 +18,13 @@ type PostPageProps = {
 const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   post,
 }: PostPageProps): JSX.Element => {
+  const [isTOCOpen, setIsTOCOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    setIsTOCOpen(false);
+  }, [router.asPath]);
+
   const Component = useMDXComponent(post.body.code);
 
   return (
@@ -40,7 +50,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         }}
       />
       {/* Article section */}
-      <article className="mb-20">
+      <article className="mb-20 px-4 md:px-8">
         {/* Title */}
         <div className="mb-20">
           <h1 className=" text-[51px] font-bold">{post.title}</h1>
@@ -54,7 +64,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </div>
 
         {/* Thumbnail */}
-        <figure className="mb-20">
+        <figure className="mb-6">
           <Image
             src={post.thumbnail.imageDir}
             width={2024}
@@ -73,17 +83,21 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </figure>
 
         {/* Body text */}
-        <div className="relative grid grid-cols-12 grid-rows-[auto] px-24">
+        <div className="relative grid grid-cols-1 grid-rows-[auto] lg:grid-cols-12">
           <div className="prose col-span-7 max-w-none">
             <Component components={MDXContainer} />
           </div>
 
           {/* Table of Contents */}
-          <div className="sticky top-20 col-start-9 col-end-13 self-start">
-            <TOC />
-          </div>
+          <TOC setIsTOCOpen={setIsTOCOpen} isTOCOPen={isTOCOpen} />
         </div>
       </article>
+      <button
+        onClick={() => setIsTOCOpen(true)}
+        className="bg-[#F2F2F2] p-2 fixed bottom-4 right-4 lg:hidden z-10"
+      >
+        <HeadingList />
+      </button>
     </>
   );
 };
