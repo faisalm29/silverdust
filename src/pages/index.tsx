@@ -22,8 +22,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   articles,
 }): JSX.Element => {
   return (
-    <main>
-      <div>
+    <>
+      <div className="px-4 md:px-8">
         {/* posts section */}
         <PageHeader
           title="Silverdust"
@@ -63,7 +63,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 };
 

@@ -21,7 +21,7 @@ const Archives: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const pageDesc = "My past that wasn't here.";
 
   return (
-    <>
+    <div className="px-4 md:px-8">
       <NextSeo
         title={`${pageTitle} | ${siteConfig.details.title}`}
         description={pageDesc}
@@ -45,7 +45,7 @@ const Archives: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

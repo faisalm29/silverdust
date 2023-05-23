@@ -12,7 +12,7 @@ const Projects: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   const pageDesc = "What I did passionately.";
 
   return (
-    <>
+    <div className="px-4 md:px-8">
       <NextSeo
         title={`${pageTitle} | ${siteConfig.details.title}`}
         description={pageDesc}
@@ -23,7 +23,7 @@ const Projects: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Card notPost={true} project={project} key={project._id} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

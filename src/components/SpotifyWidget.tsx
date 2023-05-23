@@ -10,13 +10,11 @@ const truncate = (str: string, num: number) => {
 
 const SpotifyWidget = (): JSX.Element => {
   return (
-    <div className="col-span-3">
-      <div className="flex items-center gap-4">
-        <Spotify />
-        <div>
-          <p>Not Listening</p>
-          <p className="font-light">Spotify</p>
-        </div>
+    <div className="flex items-center gap-4">
+      <Spotify />
+      <div>
+        <p>Not Listening</p>
+        <p className="font-light">Spotify</p>
       </div>
     </div>
   );
