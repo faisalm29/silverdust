@@ -82,7 +82,7 @@ export const getStaticProps = async () => {
     return 0;
   });
 
-  const articles: Article[] = allArticles.sort((a, b) => {
+  const articles: Article[] = allArticles.slice(0, 3).sort((a, b) => {
     return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
   });
 
