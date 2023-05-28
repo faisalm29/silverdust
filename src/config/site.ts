@@ -12,11 +12,11 @@ const siteConfig = {
     favicon: "/favicon.ico",
   },
   socialLinks: {
-    twitter: "@HomesickAlienn_",
-    instagram: "@faisalm29",
+    twitter: "HomesickAlienn_",
+    instagram: "faisalm29",
     linkedin: "faisal-muhammad-537741175",
-    github: "https://github.com/faisalm29",
-    email: "faisal.muhammad2911@gmail.com",
+    github: "faisalm29",
+    email: "faisal@silverdust.site",
   },
 };
 

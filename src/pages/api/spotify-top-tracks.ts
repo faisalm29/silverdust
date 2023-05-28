@@ -14,7 +14,7 @@ const handler = async (_: NextApiRequest, res: NextApiResponse) => {
 
   res.setHeader(
     "Cache-Control",
-    "public, s-maxage=86400, stale-while-revalidate=43200"
+    "public, s-maxage=86400, stale-while-revalidate=3600"
   );
 
   return res.status(200).json({ tracks });

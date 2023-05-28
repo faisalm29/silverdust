@@ -1,12 +1,25 @@
 import Link from "next/link";
 import SpotifyWidget from "./SpotifyWidget";
+import siteConfig from "@/config/site";
 
 const connects = [
-  { placeholder: "Twitter", url: "https://twitter.com" },
-  { placeholder: "Instagram", url: "https://instagram.com" },
-  { placeholder: "LinkedIn", url: "https://linkedin.com" },
-  { placeholder: "Github", url: "https://github.com" },
-  { placeholder: "Contact", url: "mailto:faisal.muhammad2911@gmail.com" },
+  {
+    placeholder: "Twitter",
+    url: `https://twitter.com/${siteConfig.socialLinks.twitter}`,
+  },
+  {
+    placeholder: "Instagram",
+    url: `https://www.instagram.com/${siteConfig.socialLinks.instagram}`,
+  },
+  {
+    placeholder: "LinkedIn",
+    url: `https://www.linkedin.com/in/${siteConfig.socialLinks.linkedin}`,
+  },
+  {
+    placeholder: "Github",
+    url: `https://github.com/${siteConfig.socialLinks.github}`,
+  },
+  { placeholder: "Contact", url: `mailto:${siteConfig.socialLinks.email}` },
 ];
 
 const navigations = [
@@ -34,21 +47,38 @@ const Footer = (): JSX.Element => {
               <div className="col-span-6">
                 <p className="text-left">
                   Created with 🤍 using{" "}
-                  <a href="https://nextjs.org" target="_blank">
+                  <a
+                    href="https://nextjs.org"
+                    target="_blank"
+                    className="underline"
+                  >
                     next
                   </a>
                   ,{" "}
-                  <a href="https://contentlayer.dev" target="_blank">
+                  <a
+                    href="https://contentlayer.dev"
+                    target="_blank"
+                    className="underline"
+                  >
                     contentlayer
                   </a>
                   ,{" "}
-                  <a href="https://tailwindcss.com" target="_blank">
+                  <a
+                    href="https://tailwindcss.com"
+                    target="_blank"
+                    className="underline"
+                  >
                     tailwind
                   </a>
                   , and deployed by{" "}
-                  <a href="https://vercel.com" target="_blank">
+                  <a
+                    href="https://vercel.com"
+                    target="_blank"
+                    className="underline"
+                  >
                     vercel
                   </a>
+                  .
                 </p>
               </div>
               <div className="lg:hidden col-start-7 col-end-13">
@@ -99,7 +129,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <p className="text-center">
-          &copy; {`Silverdust ${year}. All rights reserved.`}
+          &copy; {`${siteConfig.details.title} ${year}. All rights reserved.`}
         </p>
       </div>
     </footer>

@@ -8,12 +8,12 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: "#FFFFFF",
-      secondary: "#252525",
-      accent: "#332FD0",
-    },
     extend: {
+      colors: {
+        primary: "#FFFFFF",
+        secondary: "#252525",
+        accent: "#332FD0",
+      },
       typography: (theme) => {
         return {
           DEFAULT: {

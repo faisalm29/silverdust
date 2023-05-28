@@ -3,6 +3,7 @@ import List from "@/components/List";
 import PageHeader from "@/components/PageHeader";
 import siteConfig from "@/config/site";
 import { NextSeo } from "next-seo";
+import Loading from "@/components/Loading";
 
 const fetcher = async (input: RequestInfo) => {
   const res = await fetch(input);
@@ -12,9 +13,12 @@ const fetcher = async (input: RequestInfo) => {
 
 const Charts = (): JSX.Element => {
   const pageTitle = "Charts";
-  const pageDesc = "My recent heavy rotation on Spotify. Updated weekly.";
+  const pageDesc = "My recent heavy rotation on Spotify. Updated daily.";
 
-  const { data } = useSWR("/api/spotify-top-tracks", fetcher);
+  const { data, error } = useSWR("/api/spotify-top-tracks", fetcher);
+
+  if (error) return <div className="text-red-600">Failed to Load.</div>;
+  if (!data) return <Loading />;
 
   return (
     <div className="px-4 md:px-8">

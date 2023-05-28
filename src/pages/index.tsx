@@ -72,7 +72,7 @@ export const getStaticProps = async () => {
     return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
   });
 
-  const projects: Project[] = allProjects.sort((a, b) => {
+  const projects: Project[] = allProjects.slice(0, 3).sort((a, b) => {
     if (a.title < b.title) {
       return -1;
     }

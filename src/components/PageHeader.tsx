@@ -2,7 +2,7 @@ import Link from "next/link";
 
 type PageHeaderProps = {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   isHero?: boolean;
   isHome?: boolean;
 };
@@ -22,7 +22,7 @@ const PageHeader = ({
       ) : (
         <h1 className="text-[51px] font-bold">{title}</h1>
       )}
-      <p className="text-[38px]">{subTitle}</p>
+      {subTitle && <p className="text-[38px]">{subTitle}</p>}
       {isHero && (
         <div className="mt-8">
           <Link href="/about" className="underline">

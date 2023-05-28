@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           description: siteConfig.details.description,
           images: [
             {
-              url: `https://www.silverdust.vercel.app${siteConfig.assets.image}`,
+              url: `https://www.silverdust.site${siteConfig.assets.image}`,
               width: 1012,
               height: 506,
               alt: siteConfig.details.title,
