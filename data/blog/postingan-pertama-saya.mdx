@@ -1,0 +1,95 @@
+---
+title: "Postingan Pertama Saya"
+description: "Postingan pertama saya, membahas mengapa saya membuat blog ini dan bagaimana saya membuatnya."
+publishedAt: 2023-05-30
+thumbnail:
+  {
+    author: Pixabay,
+    imageDir: /images/blog/postingan-pertama-saya/thumbnail.jpg,
+    sourceUrl: https://www.pexels.com/photo/author-blog-create-creative-267569/,
+    from: Pexels,
+  }
+toc: true
+---
+
+Ini adalah postingan pertama saya. Lewat postingan ini, saya ingin coba memastikan kalau blog ini berjalan tanpa kendala. Di postingan ini, saya mau coba bahas sedikit soal mengapa saya membuat situs ini dan bagaimana saya membuatnya.
+
+## Mengapa Saya Membuat Situs Web Ini?
+
+Sebenarnya, kamu bisa menemukan alasannya di bagian `about` dari situs ini. Tapi ya sudah, saya akan menjelaskan kembali di postingan ini secara lebih mendetail.
+
+Saya sih sejauh ini kepikiran cuma dua alasan. Pertama, situs ini dibuat sebagai portfolio saya. Kedua, situs ini dibuat sebagai blog pribadi saya.
+
+### Sebagai portfolio
+
+Di bagian `archives` kamu bisa menemukan artikel-artikel yang saya tulis selama menjadi Content Writer. Di sana, kamu juga bisa menemukan utas-utas Twitter yang pernah saya buat. Baik artikel maupun utasnya, kebanyakan membahasa soal produktivitas dan self-improvement.
+
+Jika berkenan, kamu bisa coba menengok lalu membacanya. Lumayan, kamu bisa menyumbang traffic blog perusahaan dulu tempat saya magang. Atau barangkali lebih daripada itu, artikel atau utas yang saya tulis ternyata bermanfaat untuk kamu. Siapa yang tau?
+
+Selain artikel dan utas Twitter, di bagian `projects` kamu bisa menemukan apa-apa yang saya buat menggunakan JavaScript. Ada gim, _template_ blog, hingga situs yang lagi kamu lihat sekarang!
+
+Apa yang ada di `projects` sebenarnya hanya sebagian dari apa-apa yang pernah saya buat menggunakan JavaScript. Tapi, karena kebanyakan gagal dan tak pernah selesai hinggai terbengkalai, saya cuma ‘pamer’ beberapanya saja yang bukan bagus, bukan keren, tapi yang selesai.
+
+### Sebagai blog pribadi saya
+
+Bagian `blog` yang sedang kamu lihat sekarang rencananya akan saya jadikan ‘tempat aman’ untuk menuangkan apa yang saya pikirkan. Jadi, nantinya kamu tidak hanya akan melihat postingan soal apa yang sedang saya pelajari sekarang — _web development_ — melainkan soal apapun. Misalnya saja seperti apa yang saya tulis sekarang, sebuah postingan _random._
+
+Situs ini belum memiliki fitur _analytics._ Bahkan, saya pun nantinya tidak akan tau sudah berapa banyak orang yang membaca postingan ini. Mungkin kalau saya lagi ingin menulis sesuatu yang menurut saya penting, dan saya ingin tau berapa banyak yang membacanya, saya akan menulisnya di situs lain. Seperti medium, misalnya.
+
+Kedepannya, saya ada rencana ingin menambahkan fitur _analytics_ di situs ini. Tapi saya belum tau bagaimana caranya. Kemudian, saya juga agak merasa bersalah kalau mengumpulkan data orang-orang yang berkunjung ke situs ini. Mungkin saya nanti tetap akan menambahkan fitur analytics tetapi sebatas mengumpulkan data-data non-sensitif saja.
+
+## Bagaimana Saya Membuat Situs Web Ini?
+
+Sebelumnya saya mau minta maaf. Bagian ini mungkin akan sulit dimengerti oleh orang awam. Berhubung saya malas menjelaskan dan menyederhanakan kata-katanya, saya lebih memilih untuk meminta maaf untuk apa yang akan saya tuliskan
+
+Jadi, bagaimana saya membuat situs web ini? Sebenarnya, situs web ini adalah aplikasi Next Js biasa. Hanya saja saya tambahkan Contentlayer untuk mempermudah saya dalam menulis konten menggunakan MDX.
+
+Nantinya, MDX yang saya tulis akan divalidasi oleh Contentlayer dan dirubah menjadi format JSON yang bisa kita import ke aplikasi kita. Kasarnya, Contentlayer ini semacam Content Management System (CMS) dengan kolom-kolom fiktif.
+
+Terus, kenapa saya lebih memilih menggunakan MDX ketimbang Headless CMS? Jawabanya keren. Tapi saya bingung menjelaskannya bagaimana. Josh W Comeau, sosok dibalik kursus terkenal “CSS for JS”, juga menggunakan MDX untuk situs web personalnya dan dia menjelaskan alasannya kenapa. Berhubung alasan saya dengan alasan Josh sama, saya menyuruh kamu untuk baca [postingan](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) blognya saja.
+
+Kalau kamu bingung dengan apa yang saya jelaskan di atas, itulah gunanya tadi saya meminta maaf. Karena saya tau saya tidak akan menjelaskan bagian ini dengan baik.
+
+## Dalam Waktu Dekat
+
+Kedepannya, saya ingin menambahkan beberapa fitur lagi di situs web ini. Misalnya yang paling sederhana, menambahkan jumlah view di tiap artikel. Tetapi sebelumnya, mungkin saya akan mendesain ulang _user interface_ situs web ini karena masih _kureng_. Kemudian saya akan menambahkan beberapa transisi animasi juga agar meningkatkan pengalaman siapa saja yang mengunjungi situs web ini. Semoga semuanya bisa selesai dalam waktu dekat.
+
+Sepertinya itu saja yang ingin saya sampaikan di postingan pertama ini. Ternyata, panjang juga, ya. Terakhir, sebelum menutup postingan ini, saya ingin coba tes _syntax highlighting_ dulu.
+
+```typescript
+import { allArticles, type Article } from "contentlayer/generated";
+import { compareDesc } from "date-fns";
+
+const Component: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  articles,
+}): JSX.Element => {
+  return (
+    <>
+      <div>
+        {articles.map((article) => (
+          <div key={article.id}>
+            <h1>{article.title}</h1>
+            <p>{article.body}</p>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
+
+export const getStaticProps = async () => {
+  const articles: Articles[] = allArticles.sort((a, b) => {
+    return compareDesc(new Date(a.publishedAt), new Date(b.publishedAt));
+  });
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+export default Component;
+```
+
+Sila melihat-lihat. Sekian 😁.

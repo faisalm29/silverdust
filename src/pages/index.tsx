@@ -6,14 +6,10 @@ import {
   type Project,
   type Article,
 } from "contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
+import { compareDesc } from "date-fns";
 import { InferGetStaticPropsType, NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { id } from "date-fns/locale";
 import PageHeader from "@/components/PageHeader";
 import Card from "@/components/Card";
-import { Github, ArrowOutward } from "@/components/Icon";
 import List from "@/components/List";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -55,9 +51,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <div className="col-span-1 lg:col-start-9 lg:col-end-13">
             <div>
               <h2 className="mb-4 text-[38px] font-bold">Featured Archives</h2>
-              <p className="mb-8 text-[28px]">
-                My past that wasn`&apos;t here.
-              </p>
+              <p className="mb-8 text-[28px]">A blast from the past.</p>
             </div>
             <List isArticles={true} articles={articles} />
           </div>

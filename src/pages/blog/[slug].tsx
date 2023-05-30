@@ -59,7 +59,7 @@ const PostPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <time>{format(parseISO(post.publishedAt), "LLL d, yyyy")}</time>
             </li>
             <li>{post.readingTime.text}</li>
-            <li>100 views</li>
+            {/* <li>100 views</li> */}
           </ul>
         </div>
 

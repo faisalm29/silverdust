@@ -1,3 +1,12 @@
+---
+title: "Get Spotify Top Tracks"
+description: "How to get spotify top tracks through Spotify API."
+tags:
+  - API
+  - Spotify
+---
+
+```jsx:lib/spotify.ts
 import querystring from "querystring";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
@@ -35,13 +44,4 @@ export const getTopTracks = async () => {
     }
   );
 };
-
-export const getNowPlaying = async () => {
-  const { access_token } = await getAccessToken();
-
-  return fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
+```

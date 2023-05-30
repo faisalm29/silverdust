@@ -5,8 +5,7 @@ import {
   type Article,
   type Tweet,
 } from "contentlayer/generated";
-import { compareDesc, format, parseISO } from "date-fns";
-import { id } from "date-fns/locale";
+import { compareDesc } from "date-fns";
 import PageHeader from "@/components/PageHeader";
 import Card from "@/components/Card";
 import List from "@/components/List";
@@ -18,7 +17,7 @@ const Archives: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   tweets,
 }): JSX.Element => {
   const pageTitle = "Archives";
-  const pageDesc = "My past that wasn't here.";
+  const pageDesc = "A blast from the past.";
 
   return (
     <div className="px-4 md:px-8">
